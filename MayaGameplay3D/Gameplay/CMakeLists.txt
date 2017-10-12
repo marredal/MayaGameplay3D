@@ -11,7 +11,7 @@ else()
     set(ARCH_DEPS_DIR "x86" )
 endif()
 
-set(GAMEPLAY_SRC_PATH "../../../../Downloads/GamePlay-master") 
+set(GAMEPLAY_SRC_PATH "../../GamePlay-master") 
 set(GAMEPLAY_EXT_LIBS_PATH "${GAMEPLAY_SRC_PATH}/external-deps/lib")
 
 IF(CMAKE_SYSTEM_NAME MATCHES "Linux")
@@ -163,8 +163,8 @@ source_group(res FILES ${GAME_RES} ${GAMEPLAY_RES} ${GAME_RES_SHADERS} ${GAME_RE
 source_group(src FILES ${GAME_SRC})
 
 set(GAME_SRC
-	src/MayaDisplayer.cpp
-	src/MayaDisplayer.h
+	src/GameplayDisplayer.cpp
+	src/GameplayDisplayer.h
 )
 
 add_executable(${GAME_NAME}

@@ -75,12 +75,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\MayaDisplayer.h">
+    <ClInclude Include="src\GameplayDisplayer.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\MayaDisplayer.cpp">
+    <ClCompile Include="src\GameplayDisplayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

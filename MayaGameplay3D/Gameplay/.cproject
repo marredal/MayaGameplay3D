@@ -16,7 +16,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.debug.349030683" name="Debug" parent="cdt.managedbuild.config.gnu.exe.debug" postannouncebuildStep="Copying Assets" postbuildStep="rsync -rau ${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/res/shaders ${workspace_loc:/${ProjName}}/res;rsync -rau ${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/res/ui ${workspace_loc:/${ProjName}}/res;cp -rf ${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/res/logo_powered_white.png ${workspace_loc:/${ProjName}}/res;touch -cm ${workspace_loc:/${ProjName}}/res">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.debug.349030683" name="Debug" parent="cdt.managedbuild.config.gnu.exe.debug" postannouncebuildStep="Copying Assets" postbuildStep="rsync -rau ${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/res/shaders ${workspace_loc:/${ProjName}}/res;rsync -rau ${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/res/ui ${workspace_loc:/${ProjName}}/res;cp -rf ${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/res/logo_powered_white.png ${workspace_loc:/${ProjName}}/res;touch -cm ${workspace_loc:/${ProjName}}/res">
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.349030683." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.306691387" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.437887716" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
@@ -30,8 +30,8 @@
 									<listOptionValue builtIn="false" value="GP_USE_GAMEPAD"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.include.paths.1388077261" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/external-deps/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/../../GamePlay-master/external-deps/include&quot;"/>
 									<listOptionValue builtIn="false" value="/usr/include/gtk-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/gtk-2.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
@@ -71,8 +71,8 @@
 									<listOptionValue builtIn="false" value="gobject-2.0"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.550339008" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/external-deps/lib/linux/x86_64"/>
-									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/${ConfigName}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}/../../GamePlay-master/external-deps/lib/linux/x86_64"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/${ConfigName}"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1774954616" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -101,7 +101,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.release.617055181" name="Release" parent="cdt.managedbuild.config.gnu.exe.release" postannouncebuildStep="Copying Assets" postbuildStep="rsync -rau ${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/res/shaders ${workspace_loc:/${ProjName}}/res;rsync -rau ${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/res/ui ${workspace_loc:/${ProjName}}/res;cp -rf ${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/res/logo_powered_white.png ${workspace_loc:/${ProjName}}/res;touch -cm ${workspace_loc:/${ProjName}}/res">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.release.617055181" name="Release" parent="cdt.managedbuild.config.gnu.exe.release" postannouncebuildStep="Copying Assets" postbuildStep="rsync -rau ${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/res/shaders ${workspace_loc:/${ProjName}}/res;rsync -rau ${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/res/ui ${workspace_loc:/${ProjName}}/res;cp -rf ${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/res/logo_powered_white.png ${workspace_loc:/${ProjName}}/res;touch -cm ${workspace_loc:/${ProjName}}/res">
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.release.617055181." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.release.1992676500" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.release">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.release.406307293" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.release"/>
@@ -116,7 +116,7 @@
 								</option>
 								<option id="gnu.cpp.compiler.option.include.paths.218187428" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/gameplay}/src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/external-deps/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/../../GamePlay-master/external-deps/include&quot;"/>
 									<listOptionValue builtIn="false" value="/usr/include/gtk-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/gtk-2.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
@@ -156,8 +156,8 @@
 									<listOptionValue builtIn="false" value="gobject-2.0"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.725660289" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/external-deps/lib/linux/x86_64"/>
-									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}/../../../../Downloads/GamePlay-master/gameplay/${ConfigName}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}/../../GamePlay-master/external-deps/lib/linux/x86_64"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}/../../GamePlay-master/gameplay/${ConfigName}"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.487294404" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
