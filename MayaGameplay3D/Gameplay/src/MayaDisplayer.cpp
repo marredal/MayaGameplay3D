@@ -2,7 +2,7 @@
 
 // Declare our game instance
 MayaDisplayer game;
-
+float moveMe=0;
 MayaDisplayer::MayaDisplayer()
     : _scene(NULL), _wireframe(false)
 {
@@ -29,8 +29,8 @@ void MayaDisplayer::finalize()
 
 void MayaDisplayer::update(float elapsedTime)
 {
-    // Rotate model
-    _scene->findNode("box")->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
+
+    
 }
 
 void MayaDisplayer::render(float elapsedTime)
@@ -77,4 +77,8 @@ void MayaDisplayer::touchEvent(Touch::TouchEvent evt, int x, int y, unsigned int
     case Touch::TOUCH_MOVE:
         break;
     };
+}
+
+void hej() {
+
 }
