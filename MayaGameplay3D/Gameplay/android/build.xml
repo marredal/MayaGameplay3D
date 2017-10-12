@@ -32,11 +32,11 @@
 	</macrodef>
 
     <target name="-pre-build">
-        <build-native location="../../../GamePlay-master/gameplay"/>
+        <build-native location="../../GamePlay-master/gameplay"/>
     	<build-native location=".."/>
         <mkdir dir="../src/org/gameplay3d"/>
 	    <copy todir="../src/org/gameplay3d">
-            <fileset dir="../../../GamePlay-master/gameplay/src/org/gameplay3d"/>
+            <fileset dir="../../GamePlay-master/gameplay/src/org/gameplay3d"/>
 	    </copy>
     </target>
 
@@ -45,10 +45,10 @@
             <fileset dir="../res" />
         </copy>
         <copy todir="assets/res/shaders">
-            <fileset dir="../../../GamePlay-master/gameplay/res/shaders" />
+            <fileset dir="../../GamePlay-master/gameplay/res/shaders" />
        </copy>
         <copy todir="assets/res/ui">
-            <fileset dir="../../../GamePlay-master/gameplay/res/ui" />
+            <fileset dir="../../GamePlay-master/gameplay/res/ui" />
        </copy>
     </target>
 

@@ -1,14 +1,14 @@
-#include "GameplayDisplayer.h"
+#include "GameplayDisplay.h"
 
 // Declare our game instance
-GameplayDisplayer game;
+GameplayDisplay game;
 
-GameplayDisplayer::GameplayDisplayer()
+GameplayDisplay::GameplayDisplay()
     : _scene(NULL), _wireframe(false)
 {
 }
 
-void GameplayDisplayer::initialize()
+void GameplayDisplay::initialize()
 {
     // Load game scene from file
     _scene = Scene::load("res/demo.scene");
@@ -22,27 +22,27 @@ void GameplayDisplayer::initialize()
     _scene->getActiveCamera()->setAspectRatio(getAspectRatio());
 }
 
-void GameplayDisplayer::finalize()
+void GameplayDisplay::finalize()
 {
     SAFE_RELEASE(_scene);
 }
 
-void GameplayDisplayer::update(float elapsedTime)
+void GameplayDisplay::update(float elapsedTime)
 {
     // Rotate model
     _scene->findNode("box")->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
 }
 
-void GameplayDisplayer::render(float elapsedTime)
+void GameplayDisplay::render(float elapsedTime)
 {
     // Clear the color and depth buffers
     clear(CLEAR_COLOR_DEPTH, Vector4::zero(), 1.0f, 0);
 
     // Visit all the nodes in the scene for drawing
-    _scene->visit(this, &GameplayDisplayer::drawScene);
+    _scene->visit(this, &GameplayDisplay::drawScene);
 }
 
-bool GameplayDisplayer::drawScene(Node* node)
+bool GameplayDisplay::drawScene(Node* node)
 {
     // If the node visited contains a drawable object, draw it
     Drawable* drawable = node->getDrawable(); 
@@ -52,7 +52,7 @@ bool GameplayDisplayer::drawScene(Node* node)
     return true;
 }
 
-void GameplayDisplayer::keyEvent(Keyboard::KeyEvent evt, int key)
+void GameplayDisplay::keyEvent(Keyboard::KeyEvent evt, int key)
 {
     if (evt == Keyboard::KEY_PRESS)
     {
@@ -65,7 +65,7 @@ void GameplayDisplayer::keyEvent(Keyboard::KeyEvent evt, int key)
     }
 }
 
-void GameplayDisplayer::touchEvent(Touch::TouchEvent evt, int x, int y, unsigned int contactIndex)
+void GameplayDisplay::touchEvent(Touch::TouchEvent evt, int x, int y, unsigned int contactIndex)
 {
     switch (evt)
     {

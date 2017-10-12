@@ -1,22 +1,21 @@
-#ifndef GameplayDisplayer_H_
-#define GameplayDisplayer_H_
+#ifndef GameplayDisplay_H_
+#define GameplayDisplay_H_
 
-#include <gameplay.h>
+#include "gameplay.h"
 
 using namespace gameplay;
 
 /**
  * Main game class.
  */
-class GameplayDisplayer: public Game
+class GameplayDisplay: public Game
 {
 public:
-    
 
     /**
      * Constructor.
      */
-    GameplayDisplayer();
+    GameplayDisplay();
 
     /**
      * @see Game::keyEvent

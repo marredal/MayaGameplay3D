@@ -18,7 +18,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Gameplay</RootNamespace>
     <ProjectGuid>{30BEE126-8B04-4F96-84A1-30CBF8B3E491}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -71,7 +71,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GP_USE_GAMEPAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\GamePlay-master\gameplay\src;..\..\GamePlay-master\external-deps\include;$(DXSDK_DIR)include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GamePlay-master\gameplay\src;$(SolutionDir)GamePlay-master\external-deps\include;$(DXSDK_DIR)include</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
@@ -79,7 +79,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>OpenGL32.lib;GLU32.lib;gameplay.lib;gameplay-deps.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\GamePlay-master\external-deps\lib\windows\x86_64\Debug;$(DXSDK_DIR)Lib\x64;C:\Users\BTH\Documents\MayaGameplay3D\GamePlay-master\Debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)GamePlay-master\external-deps\lib\windows\x86_64\Debug;$(SolutionDir)GamePlay-master\gameplay\Debug;$(DXSDK_DIR)Lib\x64</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
       <Command>
@@ -90,8 +90,8 @@
       </Outputs>
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>xcopy ..\..\GamePlay-master\gameplay\res\shaders res\shaders\* /s /y /d
-xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
+      <Command>xcopy ..\GamePlay-master\gameplay\res\shaders res\shaders\* /s /y /d
+xcopy ..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMem|x64'">
@@ -101,7 +101,7 @@ xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GP_USE_GAMEPAD;GP_USE_MEM_LEAK_DETECTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\GamePlay-master\gameplay\src;..\..\GamePlay-master\external-deps\include;$(MSBuildProgramFiles32)\Microsoft DirectX SDK (June 2010)\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\GamePlay-master\gameplay\src;..\GamePlay-master\external-deps\include;$(MSBuildProgramFiles32)\Microsoft DirectX SDK (June 2010)\include;</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <ShowIncludes>false</ShowIncludes>
       <PreprocessToFile>false</PreprocessToFile>
@@ -111,7 +111,7 @@ xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>OpenGL32.lib;GLU32.lib;gameplay.lib;gameplay-deps.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\GamePlay-master\external-deps\lib\windows\x86_64\Debug;..\..\GamePlay-master\gameplay\DebugMem;$(MSBuildProgramFiles32)\Microsoft DirectX SDK (June 2010)\Lib\x64</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\GamePlay-master\external-deps\lib\windows\x86_64\Debug;..\GamePlay-master\gameplay\DebugMem;$(MSBuildProgramFiles32)\Microsoft DirectX SDK (June 2010)\Lib\x64</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
       <Command>
@@ -122,8 +122,8 @@ xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
       </Outputs>
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>xcopy ..\..\GamePlay-master\gameplay\res\shaders res\shaders\* /s /y /d
-xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
+      <Command>xcopy ..\GamePlay-master\gameplay\res\shaders res\shaders\* /s /y /d
+xcopy ..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,7 +135,7 @@ xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;GP_USE_GAMEPAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\GamePlay-master\gameplay\src;..\..\GamePlay-master\external-deps\include;$(MSBuildProgramFiles32)\Microsoft DirectX SDK (June 2010)\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\GamePlay-master\gameplay\src;..\GamePlay-master\external-deps\include;$(MSBuildProgramFiles32)\Microsoft DirectX SDK (June 2010)\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -143,7 +143,7 @@ xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>OpenGL32.lib;GLU32.lib;gameplay.lib;gameplay-deps.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\GamePlay-master\external-deps\lib\windows\x86_64\Release;..\..\GamePlay-master\gameplay\Release;$(MSBuildProgramFiles32)\Microsoft DirectX SDK (June 2010)\Lib\x64</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\GamePlay-master\external-deps\lib\windows\x86_64\Release;..\GamePlay-master\gameplay\Release;$(MSBuildProgramFiles32)\Microsoft DirectX SDK (June 2010)\Lib\x64</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
       <Command>
@@ -154,8 +154,8 @@ xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
       </Outputs>
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>xcopy ..\..\GamePlay-master\gameplay\res\shaders res\shaders\* /s /y /d
-xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
+      <Command>xcopy ..\GamePlay-master\gameplay\res\shaders res\shaders\* /s /y /d
+xcopy ..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -186,10 +186,10 @@ xcopy ..\..\GamePlay-master\gameplay\res\ui res\ui\* /s /y /d</Command>
     <None Include="res\shaders\textured.vert" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\GameplayDisplayer.cpp" />
+    <ClCompile Include="src\GameplayDisplay.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\GameplayDisplayer.h" />
+    <ClInclude Include="src\GameplayDisplay.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
