@@ -12,9 +12,9 @@ CommunicationLibrary::~CommunicationLibrary() {
     CloseHandle(m_filemapHandle);
 }
 
-void CommunicationLibrary::Init(ProgramType type, size_t bufferSize) {
+void CommunicationLibrary::Init(ProgramType type) {
 
-    m_bufferSize = bufferSize;
+    m_bufferSize = 100 * 1 << 20;
     size_t offset = sizeof(size_t*) * 3;
 
     m_filemapHandle = CreateFileMapping(
@@ -22,7 +22,7 @@ void CommunicationLibrary::Init(ProgramType type, size_t bufferSize) {
         NULL,
         PAGE_READWRITE,
         0,
-        bufferSize + offset,
+        m_bufferSize + offset,
         m_mapName);
 
     if (m_mapName == NULL) {
@@ -34,7 +34,7 @@ void CommunicationLibrary::Init(ProgramType type, size_t bufferSize) {
         FILE_MAP_ALL_ACCESS,
         0,
         0,
-        bufferSize + offset);
+        m_bufferSize + offset);
 
     if (m_buffer == NULL) {
 
@@ -44,27 +44,27 @@ void CommunicationLibrary::Init(ProgramType type, size_t bufferSize) {
         CloseHandle(m_filemapHandle);
     }
 
-    m_head = (size_t*)(m_buffer + bufferSize);
-    m_tail = (size_t*)(m_buffer + bufferSize) + sizeof(size_t);
-    m_freeMemory = (size_t*)(m_buffer + bufferSize) + 2 * sizeof(size_t);
+    m_head = (size_t*)(m_buffer + m_bufferSize);
+    m_tail = (size_t*)(m_buffer + m_bufferSize) + sizeof(size_t);
+    m_freeMemory = (size_t*)(m_buffer + m_bufferSize) + 2 * sizeof(size_t);
 
     if (type == MAYA) {
         *m_head = 0;
         *m_tail = 0;
-        *m_freeMemory = bufferSize;
+        *m_freeMemory = m_bufferSize;
     }
 }
 
-bool CommunicationLibrary::Send(MayaInformation *mayadata) {
+bool CommunicationLibrary::Send(MeshStruct *mayadata) {
 
     m_mutex = CreateMutex(nullptr, false, L"mutexObject");
     WaitForSingleObject(m_mutex, ms);
-
+    // COPY mayadata to m_Mayadata
     bool status;
 
     if (!NextSize()) {
-        m_MayaData.type == DUMMY;
-        memcpy((char*)m_buffer + *m_head, mayadata, sizeof(MayaInformation));
+        m_meshData.type == DUMMY;
+        memcpy((char*)m_buffer + *m_head, mayadata, sizeof(MeshStruct));
         *m_freeMemory = m_bufferSize - *m_head;
         if (*m_head == *m_tail)
             *m_head = 0;
@@ -72,10 +72,10 @@ bool CommunicationLibrary::Send(MayaInformation *mayadata) {
     }
 
     else {
-        m_MayaData.type == MAYA;
-        memcpy((char*)m_buffer + *m_head, mayadata, sizeof(MayaInformation));
-        *m_head += sizeof(MayaInformation);
-        *m_freeMemory -= sizeof(MayaInformation);
+        m_meshData.type == MAYA;
+        memcpy((char*)m_buffer + *m_head, mayadata, sizeof(MeshStruct));
+        *m_head += sizeof(MeshStruct);
+        *m_freeMemory -= sizeof(MeshStruct);
         status = true;
     }
 
@@ -90,15 +90,15 @@ bool CommunicationLibrary::Receive() {
 
     bool status;
 
-    memcpy(&m_MayaData, (char*)m_buffer + *m_tail, sizeof(MayaInformation));
+    memcpy(&m_meshData, (char*)m_buffer + *m_tail, sizeof(MeshStruct));
 
-    if (m_MayaData.type == MAYA) {
-        *m_tail += sizeof(MayaInformation);
-        *m_freeMemory += sizeof(MayaInformation);
+    if (m_meshData.type == MAYA) {
+        *m_tail += sizeof(MeshStruct);
+        *m_freeMemory += sizeof(MeshStruct);
         status = true;
     }
 
-    if (m_MayaData.type != MAYA) {
+    if (m_meshData.type != MAYA) {
 
         if (*m_tail > *m_head) {
             *m_tail = 0;
@@ -112,10 +112,14 @@ bool CommunicationLibrary::Receive() {
 }
 
 bool CommunicationLibrary::NextSize() {
-   
+
     int bufferOffset = 64;
-    if (m_bufferSize <= *m_head + sizeof(MayaInformation) + bufferOffset)
+    if (m_bufferSize <= *m_head + sizeof(MeshStruct) + bufferOffset)
         return false;
     else
         return true;
+}
+
+MeshStruct CommunicationLibrary::GetMesh() {
+    return m_meshData;
 }

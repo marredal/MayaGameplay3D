@@ -3,24 +3,42 @@
 #include <stdio.h>
 #include <tchar.h>
 #include <mutex>
+
 enum ProgramType {
     MAYA,
     GAMEPLAY,
     DUMMY
 };
 
-enum Node {
+
+enum MayaNode {
     CAMERA,
     LIGHT,
     MESH,
     MATERIAL,
-    TRANSFORMATION
+    TRANSFORMATION,
+    NROFNODES
 };
 
-struct MayaInformation {
-    float translation[3];
-    ProgramType type;
+struct vec3 {
+    float x;
+    float y;
+    float z;
+};
 
+struct vec2 {
+    float U;
+    float V;
+};
+
+struct MeshStruct {
+
+    ProgramType type;
+    double transformation[4][4];
+    vec3 vertex;
+    vec3 normal;
+    vec2 texture;
+    std::string name;
 };
 
 class CommunicationLibrary {
@@ -32,13 +50,14 @@ public:
     virtual ~CommunicationLibrary();
 
     // Initialize the communication library.
-    void Init(ProgramType type, size_t bufferSize);
+    void Init(ProgramType type);
     // Send information to the shared buffer.
-    bool Send(MayaInformation *mayaData);
+    bool Send(MeshStruct *mayaData);
     // Read information from the shared buffer.
     bool Receive();
     // Check if there is room for the next message that is going to be sent.
     bool NextSize();
+    MeshStruct GetMesh();
 
 private:
     size_t* m_head;
@@ -47,11 +66,11 @@ private:
     size_t m_bufferSize;
     char* m_buffer;
     TCHAR* m_mapName = TEXT("MayaGameplayFilemapOBJ");
-    MayaInformation m_MayaData;
+    MeshStruct m_meshData;
     HANDLE m_filemapHandle;
     HANDLE m_mutex;
     DWORD ms = INFINITE;
-    
+
 
 };
 
