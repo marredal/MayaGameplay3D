@@ -4,6 +4,8 @@
 
 using namespace std;
 
+MCallbackIdArray callbackIdArray;
+
 // called when the plugin is loaded
 EXPORT MStatus initializePlugin(MObject obj) {
     // most functions will use this variable to indicate for errors
