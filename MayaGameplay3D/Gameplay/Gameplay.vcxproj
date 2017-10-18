@@ -71,14 +71,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GP_USE_GAMEPAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\BTH\Documents\MayaGameplay3D\MayaGameplay3D\ComLib;$(ProjectDir)gameplay-src;$(ProjectDir)gameplay-include;$(DXSDK_DIR)include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildStartupDirectory)\ComLib;$(ProjectDir)gameplay-src;$(ProjectDir)gameplay-include;$(DXSDK_DIR)include</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>OpenGL32.lib;GLU32.lib;gameplay.lib;gameplay-deps.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>OpenGL32.lib;GLU32.lib;gameplay-deps.lib;gameplay.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)gameplay-lib\windows\x86_64\Debug;$(ProjectDir)gameplay-debug;$(DXSDK_DIR)Lib\x64</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
