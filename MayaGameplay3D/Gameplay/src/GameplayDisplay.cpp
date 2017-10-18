@@ -1,5 +1,5 @@
 #include "GameplayDisplay.h"
-#include "CommunicationLibrary.cpp"
+#include "CommunicationLibrary.hpp"
 
 // Declare our game instance
 GameplayDisplay game;
@@ -33,7 +33,7 @@ void GameplayDisplay::update(float elapsedTime) {
    // _scene->findNode("box")->rotateY(MATH_DEG_TO_RAD((float)elapsedTime / 1000.0f * 180.0f));
 
     comlib.Receive();
-    _scene->findNode("box")->setTranslationX(comlib.GetMesh().transformation[0][0]);
+   // _scene->findNode("box")->setTranslationX(comlib.GetMesh().transformation[0][0]);
 }
 
 void GameplayDisplay::render(float elapsedTime) {
